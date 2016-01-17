@@ -11,6 +11,7 @@ angular.module('whodeliversApp')
   .controller('MainCtrl', function ($scope, DeliveryService) {
     $scope.address = null;
     $scope.showRestaurantBox = false;
+    $scope.viewOtherOptions = false;
 
     $scope.searchForRestaurants = function(){
       console.log('hi');
@@ -22,6 +23,8 @@ angular.module('whodeliversApp')
 
     $scope.getRestaurant = function(restaurant){
       DeliveryService.searchByName(restaurant).then(function(response){
+        $scope.harvestInfo = DeliveryService.getHarvestInfo();
+
         $scope.results = response;
       })
     }

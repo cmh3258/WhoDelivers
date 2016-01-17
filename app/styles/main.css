@@ -1,7 +1,50 @@
 
+.container{
+  max-width: 700px;
+  margin: 0 auto;
+}
 input{
   padding: 1em;
-  width: 50%;
+  width: 100%;
   margin: 0 auto;
   text-align: center;
+  margin-top:2em;
+}
+
+.restaurant-result{}
+.harvest-result{
+  overflow: auto;
+  background-color: #E8E8E8;
+  padding: 2em;
+}
+.harvest-result img{
+  float: left;
+  margin-right: 2em;
+}
+.harvest-result h3{
+
+}
+
+.viewOptionsButton{
+  color: red;
+  cursor: pointer;
+}
+.others-result > div{
+  overflow: auto;
+  background-color: #4a4a4a;
+  padding: 10px;
+  margin-bottom: 2px;
+}
+.others-result img{
+  float: left;
+  margin-right: 2em;
+  width: 50px;
+}
+.others-result h3{
+  display: inline-block;
+}
+.others-result a{
+  display: inline-block;
+  color: #e1e1e1;
+  font-size: 10px;
 }

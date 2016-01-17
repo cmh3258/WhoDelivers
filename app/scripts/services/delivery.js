@@ -8,9 +8,15 @@
  * Factory in the whodeliversApp.
  */
 angular.module('whodeliversApp')
-  .factory('DeliveryService', function ($http) {
+  .factory('DeliveryService', function ($http, ProviderService) {
 
-    var menu = {};
+    var harvestInfo = null;
+
+    function createHarvestLink(restaurantName){
+      var nameString = restaurantName.split(' ').join('-') + '-Austin-TX';      
+      var url = 'https://harvest-staging-app.herokuapp.com/#/'+nameString+'/menu/';
+      harvestInfo = {'providerName':'Harvest', 'providerUrl':url, 'providerLogo':'../../images/harvest-logo.png'};
+    }
 
     // Public API here
     return {
@@ -37,7 +43,6 @@ angular.module('whodeliversApp')
           url:url
         }).then(function(response){
           console.log('[searchByName] Success response: ', response);
-          // menu = response;
           var results = response.data.results;
           var filteredResults = [];
           for(var i = 0; i < results.length; i++){
@@ -48,10 +53,18 @@ angular.module('whodeliversApp')
             else{
               try{
                 var provider_menu_url = JSON.parse(results[i].company.provider_menu_url);
+                var providersInfo = [];
+                for(var i = 0; i < provider_menu_url.length; i++){
+                  var info = ProviderService.getProviderInfo(provider_menu_url[i]);
+                  providersInfo.push(info);
+                }
                 results[i].company.provider_menu_url = provider_menu_url;
+                results[i].providersInfo = providersInfo;
               }
               catch(e){
+                console.log('e: ', e);
               }
+              createHarvestLink(results[i].company.name);
               filteredResults.push(results[i]);
             }
           }
@@ -61,6 +74,12 @@ angular.module('whodeliversApp')
           console.log('[searchByName] Error response: ', response);
           return null;
         })
+      },
+      createHarvestLinkByName: function(name){
+        return createHarvestLink(name);
+      },
+      getHarvestInfo: function(){
+        return harvestInfo;
       }
     };
   });

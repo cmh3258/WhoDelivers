@@ -14,10 +14,26 @@
 <div ng-if="results === null || results.length === 0">
   <h2>No Results</h2>
 </div>
+
+<h3>{{results.length}} Results</h3>
 <div ng-repeat="locale in results" ng-if="locale.company.provider_menu_url !== null">
-  <h2>{{locale.company.name}}</h2>
-  <div ng-repeat="provider in locale.company.provider_menu_url track by $index">
-    <h3>{{provider}}</h3>
+  <div class="restaurant-result">
+    <h2>{{locale.company.name}}</h2>
+    <img ng-src="{{locale.company.logo_url}}" class="restaurantLogo"/>
   </div>
-  <img ng-src="{{locale.company.logo_url}}" class="restaurantLogo"/>
+
+  <div class="harvest-result">
+    <img ng-src="{{harvestInfo.providerLogo}}" alt=""/>
+    <h3>{{harvestInfo.providerName}}</h3>
+    <a ng-href="{{harvestInfo.providerUrl}}" target="_blank">Order from {{harvestInfo.providerName}}</a>
+  </div>
+
+  <div class="others-result">
+    <h4 ng-click="viewOtherOptions = !viewOtherOptions" class="viewOptionsButton">{{locale.providersInfo.length}} other delivery options</h4>
+    <div ng-repeat="provider in locale.providersInfo track by $index" ng-show="viewOtherOptions">
+      <img ng-src="{{provider.providerLogo}}" alt=""/>
+      <h3>{{provider.providerName}}</h3>
+      <a ng-href="{{provider.providerUrl}}" target="_blank">Order from {{provider.providerName}}</a>
+    </div>
+  </div>
 </div>
