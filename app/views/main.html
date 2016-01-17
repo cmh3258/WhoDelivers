@@ -1,0 +1,23 @@
+
+
+<div ng-show="!showRestaurantBox">
+  <h1>Address: {{address}}</h1>
+  <addressbar></addressbar>
+  <button ng-click="searchForRestaurants()">search</button>
+</div>
+
+<form ng-submit="getRestaurant(restaurant)">
+  <input ng-show="showRestaurantBox" ng-model="restaurant" placeholder="Enter Restaurant Name"/>
+  <button ng-show="showRestaurantBox" ng-click="getRestaurant(restaurant)">submit</button>
+</form>
+
+<div ng-if="results === null || results.length === 0">
+  <h2>No Results</h2>
+</div>
+<div ng-repeat="locale in results" ng-if="locale.company.provider_menu_url !== null">
+  <h2>{{locale.company.name}}</h2>
+  <div ng-repeat="provider in locale.company.provider_menu_url track by $index">
+    <h3>{{provider}}</h3>
+  </div>
+  <img ng-src="{{locale.company.logo_url}}" class="restaurantLogo"/>
+</div>
