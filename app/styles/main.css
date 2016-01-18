@@ -57,3 +57,28 @@ input{
   color: #e1e1e1;
   font-size: 10px;
 }
+
+.photosContainer{
+  margin-top:1em;
+  overflow: auto;
+  width: 100%;
+}
+.photoContain{
+  width: 14em;
+  height: 14em;
+  margin: 4px;
+  position: relative;
+  overflow: hidden;
+  float: left;
+  
+}
+.photoContain > div{
+}
+.photoContain img{
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+
+

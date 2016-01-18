@@ -8,7 +8,7 @@
  * Controller of the whodeliversApp
  */
 angular.module('whodeliversApp')
-  .controller('MainCtrl', function ($scope, DeliveryService) {
+  .controller('MainCtrl', function ($scope, DeliveryService, PhotosService) {
     $scope.address = null;
     $scope.showRestaurantBox = false;
     $scope.viewOtherOptions = false;
@@ -26,6 +26,13 @@ angular.module('whodeliversApp')
         $scope.harvestInfo = DeliveryService.getHarvestInfo();
 
         $scope.results = response;
+        for(var i = 0; i < response.length; i++){
+          PhotosService.getPhotos(response[i].company.name).then(function(results){
+            $scope.photos = results;
+          })  
+        }
+
+        
       })
     }
   });

@@ -8,7 +8,7 @@
  * Factory in the whodeliversApp.
  */
 angular.module('whodeliversApp')
-  .factory('DeliveryService', function ($http, ProviderService) {
+  .factory('DeliveryService', function ($http, ProviderService, PhotosService) {
 
     var harvestInfo = null;
 
@@ -60,10 +60,13 @@ angular.module('whodeliversApp')
                 }
                 results[i].company.provider_menu_url = provider_menu_url;
                 results[i].providersInfo = providersInfo;
+
+                
               }
               catch(e){
                 console.log('e: ', e);
               }
+
               createHarvestLink(results[i].company.name);
               filteredResults.push(results[i]);
             }
