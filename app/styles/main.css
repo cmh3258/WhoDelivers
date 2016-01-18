@@ -12,6 +12,10 @@ input{
 }
 
 .restaurant-result{}
+.restaurant-result > div{
+  width: 30%;
+  float: left;
+}
 .harvest-result{
   overflow: auto;
   background-color: #E8E8E8;
@@ -29,16 +33,21 @@ input{
   color: red;
   cursor: pointer;
 }
+.others-result{
+  display: inline-block;
+}
 .others-result > div{
   overflow: auto;
-  background-color: #4a4a4a;
+  /*background-color: #4a4a4a;*/
   padding: 10px;
-  margin-bottom: 2px;
+  margin-left: 9px;
+  display: inline-block;
 }
 .others-result img{
   float: left;
   margin-right: 2em;
-  width: 50px;
+  width: 35px;
+  margin-top:10px;
 }
 .others-result h3{
   display: inline-block;

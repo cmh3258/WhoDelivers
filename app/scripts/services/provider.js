@@ -59,7 +59,9 @@ angular.module('whodeliversApp')
     }];
 
     function getProviderLogo(providerName){
-      var provider = _.findIndex(providerLogoList, {'name':providerName});
+      var provider = _.findIndex(providerLogoList, function(o){
+        return o.name.toLowerCase() === providerName.toLowerCase();
+      });
       console.log('provider: ', providerName, provider);
       if(provider > -1){
         return providerLogoList[provider].logoUrl;
