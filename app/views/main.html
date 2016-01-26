@@ -1,66 +1,90 @@
 
-
-<div ng-show="!showRestaurantBox">
-  <h1>Address: {{address}}</h1>
-  <addressbar></addressbar>
-  <button ng-click="searchForRestaurants()">search</button>
+<div class="hero">
+  <div class="austin">
+    <div class="darken"></div>
+  </div>
+  <div>
+    <h1>Austin, Tx</h1>
+    <a class="imgsrc" href="http://farm6.static.flickr.com/5143/5596503764_1fb4ac4ac8_o.jpg">image src</a>
+    <div class="buttons">
+      <button class="selectSearchTypeBtn">Restaurant Name</button>
+      <button class="selectSearchTypeBtn">Area</button>
+    </div>
+  </div>
 </div>
 
-<form ng-submit="getRestaurant(restaurant)">
-  <input ng-show="showRestaurantBox" ng-model="restaurant" placeholder="Enter Restaurant Name"/>
-  <button ng-show="showRestaurantBox">submit</button>
-</form>
+<main class="container">
 
-<div ng-if="results === null || results.length === 0">
-  <h2>No Results</h2>
-</div>
-
-<h3>{{results.length}} Results</h3>
-<div ng-repeat="locale in results" ng-if="locale.company.provider_menu_url !== null">
-  <div class="restaurant-result">
-    <div>
-      <img ng-src="{{locale.company.logo_url}}" class="restaurantLogo"/>
-    </div>
-    <div>
-      <h2>{{locale.company.name}}</h2>
-      <h4 ng-click="viewOtherOptions = !viewOtherOptions" class="viewOptionsButton">{{locale.providersInfo.length}} delivery drivers</h4>
-    
-    <div class="others-result">
-      <div ng-repeat="provider in locale.providersInfo track by $index" ng-show="viewOtherOptions">
-        <img ng-src="{{provider.providerLogo}}" alt=""/>
-        <h3>{{provider.providerName}}</h3>
-        <!-- <a ng-href="{{provider.providerUrl}}" target="_blank">Order from {{provider.providerName}}</a> -->
-      </div>
-      </div>
-
-    </div>
-    <div>
-      <a ng-href="{{harvestInfo.providerUrl}}" target="_blank">Order Now with {{harvestInfo.providerName}}</a>
-    </div>
-
+  <div ng-show="!showRestaurantBox">
+    <h3>{{address}}</h3>
+    <addressbar></addressbar>
+    <button ng-if="address==='Success'" ng-click="searchForRestaurants()" class="actionBtn">Next</button>
   </div>
 
-  <div class="photosContainer">
-    <div ng-repeat="photo in photos" class="photoContain">
+  <form ng-submit="getRestaurant(restaurant)">
+    <input ng-show="showRestaurantBox" ng-model="restaurant" placeholder="Enter Restaurant Name"/>
+    <button ng-show="showRestaurantBox"  class="actionBtn">submit</button>
+  </form>
+
+  <div ng-if="results === null || results.length === 0">
+    <h2>No Results</h2>
+  </div>
+
+  <h3 ng-if="results !== null && results !== '' && results.length !== 0">{{results.length}} Results</h3>
+  <div ng-repeat="locale in results" ng-if="locale.company.provider_menu_url !== null">
+    <div class="restaurant-result">
       <div>
-        <img ng-src="{{photo}}"/>
+        <img ng-src="{{locale.company.logo_url}}" class="restaurantLogo"/>
+      </div>
+      <div>
+        <h2>{{locale.company.name}}</h2>
+        <h4 ng-click="viewOtherOptions = !viewOtherOptions" class="viewOptionsButton">{{locale.providersInfo.length}} delivery drivers</h4>
+      
+      <div class="others-result">
+        <div ng-repeat="provider in locale.providersInfo track by $index" ng-show="viewOtherOptions">
+          <img ng-src="{{provider.providerLogo}}" alt=""/>
+          <h3>{{provider.providerName}}</h3>
+          <!-- <a ng-href="{{provider.providerUrl}}" target="_blank">Order from {{provider.providerName}}</a> -->
+        </div>
+        </div>
+
+      </div>
+      <div>
+        <a ng-href="{{harvestInfo.providerUrl}}" target="_blank">Order Now with {{harvestInfo.providerName}}</a>
+      </div>
+
+    </div>
+
+    <div class="photosContainer">
+      <div ng-repeat="photo in photos" class="photoContain">
+        <div>
+          <img ng-src="{{photo}}"/>
+        </div>
       </div>
     </div>
+
+    <!-- <div class="harvest-result">
+      <img ng-src="{{harvestInfo.providerLogo}}" alt=""/>
+      <h3>{{harvestInfo.providerName}}</h3>
+      <a ng-href="{{harvestInfo.providerUrl}}" target="_blank">Order from {{harvestInfo.providerName}}</a>
+
+      <div class="others-result">
+        <h4 ng-click="viewOtherOptions = !viewOtherOptions" class="viewOptionsButton">{{locale.providersInfo.length}} delivery drivers</h4>
+        <div ng-repeat="provider in locale.providersInfo track by $index" ng-show="viewOtherOptions">
+          <img ng-src="{{provider.providerLogo}}" alt=""/>
+          <h3>{{provider.providerName}}</h3>
+        </div>
+      </div>
+    </div> -->
+
+    
   </div>
 
-  <!-- <div class="harvest-result">
-    <img ng-src="{{harvestInfo.providerLogo}}" alt=""/>
-    <h3>{{harvestInfo.providerName}}</h3>
-    <a ng-href="{{harvestInfo.providerUrl}}" target="_blank">Order from {{harvestInfo.providerName}}</a>
+  <hr>
 
-    <div class="others-result">
-      <h4 ng-click="viewOtherOptions = !viewOtherOptions" class="viewOptionsButton">{{locale.providersInfo.length}} delivery drivers</h4>
-      <div ng-repeat="provider in locale.providersInfo track by $index" ng-show="viewOtherOptions">
-        <img ng-src="{{provider.providerLogo}}" alt=""/>
-        <h3>{{provider.providerName}}</h3>
-      </div>
-    </div>
-  </div> -->
+  <div class="predefinedRestaurants">
+    <h2>Popular Austin Restaurants</h2>
+  </div>
 
-  
-</div>
+</main>
+

@@ -1,4 +1,13 @@
 
+body{
+  margin:0;
+}
+.header{
+  position: absolute;
+  color: white;
+  padding: 1em;
+  z-index: 1;
+}
 .container{
   max-width: 700px;
   margin: 0 auto;
@@ -9,6 +18,59 @@ input{
   margin: 0 auto;
   text-align: center;
   margin-top:2em;
+}
+
+.hero{
+  background: url('../images/austin_6_2.jpg') center no-repeat;
+  background-size: cover;
+  height: 21em;
+  position: relative;
+}
+.austin{
+  background: url('../images/austin_6_2.jpg') center no-repeat;
+  background-size: cover;
+}
+.hero > div:nth-of-type(2){
+  text-align: center;
+  position: absolute;
+  top:6em;
+  left:0;
+  right: 0;
+}
+.hero h1{
+  color: white;
+  font-size: 32px;
+}
+.imgsrc{
+  right: 0;
+  bottom: -6em;
+  position: absolute;
+  color: #909090;
+}
+.darken{
+  background-color: rgba(10,10,10,.5);
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: #fff;
+  width: 100%;
+  height: 100%;
+}
+.selectSearchTypeBtn{
+  padding: 10px 22px;
+  border: 0;
+  box-shadow: none;
+  color: white;
+  background: transparent;
+  border: 3px solid white;
+  border-radius: 5px;
+  font-size: 13px;
+  cursor: pointer;
+  width: 12em;
+  transition: background-color .3s;
+}
+.selectSearchTypeBtn:hover{
+  background-color: #015C79;
 }
 
 .restaurant-result{}
@@ -27,6 +89,12 @@ input{
 }
 .harvest-result h3{
 
+}
+.actionBtn{
+      padding: 10px 22px;
+    background: transparent;
+    border: 3px solid #C200FF;
+    border-radius: 5px;
 }
 
 .viewOptionsButton{

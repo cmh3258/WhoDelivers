@@ -12,6 +12,7 @@ angular.module('whodeliversApp')
     $scope.address = null;
     $scope.showRestaurantBox = false;
     $scope.viewOtherOptions = false;
+    $scope.results = [];
 
     $scope.searchForRestaurants = function(){
       console.log('hi');
