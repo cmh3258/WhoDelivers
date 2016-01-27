@@ -13,8 +13,9 @@
   </div>
 </div>
 
-<main class="container">
+<main class="">
 
+  <div class="container">
   <div ng-show="!showRestaurantBox">
     <h3>{{address}}</h3>
     <addressbar></addressbar>
@@ -79,12 +80,31 @@
 
     
   </div>
+  </div>
 
   <hr>
 
+  <div class="leftInfo">
+    <div>
+      <h3>hi</h3>
+    </div>
+  </div>
   <div class="predefinedRestaurants">
     <h2>Popular Austin Restaurants</h2>
+    <div ng-repeat="rest in austinRestaurants" class="col-5">
+      <div class="previewExperience">
+        <div class="backgroundImage">
+          <div class="darken"></div>
+          <img ng-src="{{rest.img}}"/>
+        </div>
+        
+        <div class="previewCenterInfo">
+          <h4>{{rest.name}}</h4>
+        </div>
+      </div>
+    </div>
   </div>
+
 
 </main>
 
