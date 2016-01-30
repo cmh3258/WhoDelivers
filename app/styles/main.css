@@ -196,7 +196,7 @@
     width: 48%;
     padding: 7px;
     display: inline-block;
-    height: 20em;
+    height: 21em;
     /*height: 12em;*/
     overflow: hidden;
     /*position: relative;*/
@@ -234,16 +234,17 @@
     position: absolute;
     /*top: 50%;*/
     /*left: 50%;*/
-    margin-top: -33px;
+    margin-top: -13px;
     margin-left: -20px;
     
-    bottom: -12px;
+    bottom: 15px;
     left: 3em;
   }
   .previewCenterInfo h4{
     color: white;
     font-size: 19px;
     display: inline-block;
+    margin: 0;
   }
 
   /* restaurantDetails */
@@ -255,9 +256,19 @@
       margin: 0 auto;
       line-height: 19px;
       margin-top: 10px;
+      margin-bottom: 22px;
+    }
+    .restaurantDetails .quote h5{
+      font-size: 17px;
+      font-weight: bolder;
+      padding: 0;
+      margin: 0;
+      margin-top: 18px;
     }
     .restaurantDetails .quote p{
-      font-size: 14px;
+      font-size: 13px;
+      margin: 7px;
+      font-style: italic;
     }
     .restaurantDetails a{
       color: #015C79;
@@ -270,6 +281,10 @@
       background: url('../images/icons/potatoes4.svg') no-repeat center;
       padding: 1em; 
       background-size: 18px;
+      display: inline-block;
+      padding: 8px 13px 16px;
+      margin-bottom: -3px;
+      margin-left: 4px;
     }
 
 
