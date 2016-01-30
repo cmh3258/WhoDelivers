@@ -13,9 +13,9 @@
   </div>
 </div>
 
-<main class="">
+<main class="container">
 
-  <div class="container">
+  <div class="">
   <div ng-show="!showRestaurantBox">
     <h3>{{address}}</h3>
     <addressbar></addressbar>
@@ -80,29 +80,47 @@
 
     
   </div>
-  </div>
+  <!-- </div> -->
 
   <hr>
 
-  <div class="leftInfo">
+  <!-- <div class="leftInfo">
     <div>
       <h3>hi</h3>
     </div>
-  </div>
+  </div> -->
   <div class="predefinedRestaurants">
     <h2>Popular Austin Restaurants</h2>
-    <div ng-repeat="rest in austinRestaurants" class="col-5">
-      <div class="previewExperience">
-        <div class="backgroundImage">
-          <div class="darken"></div>
-          <img ng-src="{{rest.img}}"/>
+    
+    <div ng-repeat="rest in austinRestaurants" ng-click="rest.showInfo = !rest.showInfo">
+      
+      <div class="restaurantsCol">
+        <div class="previewExperience">
+          <div class="backgroundImage">
+            <div class="darken"></div>
+            <img ng-src="{{rest.img}}"/>
+          </div>
+          
+          <div class="previewCenterInfo">
+            <h4>{{rest.name}}</h4>
+            <i class="fries"></i>
+          </div>
         </div>
-        
-        <div class="previewCenterInfo">
-          <h4>{{rest.name}}</h4>
+        <div class="restaurantDetails">
+          <div class="quote">
+            <p>So many good tacos. Queso, did I say Queso? Yes I did. For the win.</p>
+          </div>
+          <a href="">order</a>
         </div>
       </div>
+      <!-- <div ng-show="rest.showInfo">
+        <div class="infoBox">
+          <h2>Some info here</h2>
+        </div>
+      </div>   -->
     </div>
+    
+
   </div>
 
 
