@@ -27,7 +27,7 @@
       color: white;
     }
     .container{
-      max-width: 800px;
+      max-width: 1200px;
       margin: 0 auto;
     }
     input{
@@ -85,7 +85,7 @@
       border-radius: 5px;
       font-size: 13px;
       cursor: pointer;
-      width: 12em;
+      width: 14em;
       transition: background-color .3s;
     }
     .selectSearchTypeBtn:hover{
@@ -167,6 +167,60 @@
   overflow: hidden;
 }
 
+/* Blog */
+  .blog{
+    margin-top:3em;
+    margin-bottom: 3em;
+  }
+  .postPreview{
+    /*margin-top:3em;*/
+    padding: 1em;
+  }
+  .postPreview .left,
+  .postPreview .right{
+    display: inline-block;
+  }
+  .postPreview .left{
+    width: 65%;
+  }
+  .postPreview .left > div{
+    position: relative;
+    overflow: hidden;
+    height: 22em;
+    /* max-height: 336px; */
+    /* max-width: 405px; */
+    width: 90%;
+    margin: 0 auto;
+  }
+  .postPreview img{
+    /*height: 100%;*/
+    width: 100%;
+    overflow: hidden;
+    margin-top: -13em;
+  }
+  .postPreview .right{
+    width: 30%;
+    position: absolute;
+    margin-top: 1em;
+  }
+  .postPreview .right h2{
+    margin: 0;
+    margin-bottom: 4px;
+  }
+  .readmore{
+    text-decoration: underline;
+    color: #52005F;
+    font-size: 12px;
+    cursor:pointer;
+  }
+  .date{
+    font-size: 16px;
+    font-size: 13px;
+    margin: 0;
+    color: #5F5F5F;
+  }
+
+
 
 /* Pre found restaurants */
   .leftInfo{
@@ -181,6 +235,8 @@
     height: 90vh;
   }
   .predefinedRestaurants{
+    max-width: 800px;
+    margin:0 auto;
     /*width: 58%;*/
     /*float: left;*/
     /*margin-left: 1em;*/

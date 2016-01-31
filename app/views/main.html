@@ -7,16 +7,35 @@
     <h1>Austin, Tx</h1>
     <a class="imgsrc" href="http://farm6.static.flickr.com/5143/5596503764_1fb4ac4ac8_o.jpg">image src</a>
     <div class="buttons">
-      <button class="selectSearchTypeBtn">Restaurant Name</button>
-      <button class="selectSearchTypeBtn">Area</button>
+      <!-- <button class="selectSearchTypeBtn">Restaurant Name</button>
+      <button class="selectSearchTypeBtn">Area</button> -->
+      <button class="selectSearchTypeBtn">Who Delivers to me?</button>
     </div>
   </div>
 </div>
 
+
 <main class="container">
 
-  <div class="">
-  <div ng-show="!showRestaurantBox">
+  <div class="blog">
+  <div class="postPreview">
+    <div class="left">
+      <div>
+        <img src="../images/restaurant_images/chipot.jpg"/>
+      </div>
+    </div>
+    <div class="right">
+      <h2>Tempor Diam Eu</h2>
+      <h5 class="date">January 1st, 2016</h5>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In interdum mauris in dui sollicitudin interdum. Proin in nunc dapibus, tempor diam eu, placerat odio. Integer ligula ante, tincidunt vitae est sed, convallis fermentum nunc. Vestibulum lobortis sagittis maximus. </p>
+      <p class="readmore">read full review</p>
+    </div>
+  </div>
+  </div>
+
+  <!-- <div class=""> -->
+  
+  <!-- <div ng-show="!showRestaurantBox">
     <h3>{{address}}</h3>
     <addressbar></addressbar>
     <button ng-if="address==='Success'" ng-click="searchForRestaurants()" class="actionBtn">Next</button>
@@ -29,7 +48,7 @@
 
   <div ng-if="results === null || results.length === 0">
     <h2>No Results</h2>
-  </div>
+  </div> -->
 
   <h3 ng-if="results !== null && results !== '' && results.length !== 0">{{results.length}} Results</h3>
   <div ng-repeat="locale in results" ng-if="locale.company.provider_menu_url !== null">
@@ -45,7 +64,6 @@
         <div ng-repeat="provider in locale.providersInfo track by $index" ng-show="viewOtherOptions">
           <img ng-src="{{provider.providerLogo}}" alt=""/>
           <h3>{{provider.providerName}}</h3>
-          <!-- <a ng-href="{{provider.providerUrl}}" target="_blank">Order from {{provider.providerName}}</a> -->
         </div>
         </div>
 
