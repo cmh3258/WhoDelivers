@@ -8,7 +8,7 @@
  * Controller of the whodeliversApp
  */
 angular.module('whodeliversApp')
-  .controller('MainCtrl', function ($scope, DeliveryService, PhotosService) {
+  .controller('MainCtrl', function ($scope, DeliveryService, PhotosService, $location) {
     $scope.address = null;
     $scope.showRestaurantBox = false;
     $scope.viewOtherOptions = false;
@@ -87,15 +87,15 @@ angular.module('whodeliversApp')
         'link':'https://www.harvestd.com/Koriente-austin-tx/menu/',
         'categories':['asian']
       },
-      {
-        'name':'Milto\'s',
-        'img':'../images/restaurant_images/milto.jpg',
-        'fsid':'',
-        'description':'',
-        'deferintiator':'',
-        'link':'https://www.harvestd.com/milto\'s-austin-tx/menu/',
-        'categories':['meditteranean','pizza']
-      },
+      // {
+      //   'name':'Milto\'s',
+      //   'img':'../images/restaurant_images/milto.jpg',
+      //   'fsid':'',
+      //   'description':'',
+      //   'deferintiator':'',
+      //   'link':'https://www.harvestd.com/milto\'s-austin-tx/menu/',
+      //   'categories':['meditteranean','pizza']
+      // },
       {
         'name':'Noble Pig',
         'img':'../images/restaurant_images/noble.jpg',
@@ -105,15 +105,15 @@ angular.module('whodeliversApp')
         'link':'https://www.harvestd.com/noble-pig-austin-tx/menu/',
         'categories':['sandwhiches']
       },
-      {
-        'name':'Pei Wei',
-        'img':'../images/restaurant_images/pei.jpg',
-        'fsid':'',
-        'description':'',
-        'deferintiator':'',
-        'link':'https://www.harvestd.com/pei-wei-austin-tx/menu/',
-        'categories':['asian']
-      },
+      // {
+      //   'name':'Pei Wei',
+      //   'img':'../images/restaurant_images/pei.jpg',
+      //   'fsid':'',
+      //   'description':'',
+      //   'deferintiator':'',
+      //   'link':'https://www.harvestd.com/pei-wei-austin-tx/menu/',
+      //   'categories':['asian']
+      // },
       {
         'name':'Qdoba',
         'img':'../images/restaurant_images/qdoba.jpg',
@@ -145,7 +145,7 @@ angular.module('whodeliversApp')
         'name':'Whataburger',
         'img':'../images/restaurant_images/whata.jpg',
         'fsid':'',
-        'description':'Fast food, but a Texan favorite. Burgers.',
+        'description':'Gotta love the ol\' Texan favorite.',
         'deferintiator':'HBCB',
         'link':'https://www.harvestd.com/whataburger-austin-tx/menu/',
         'categories':['burgers']
@@ -170,8 +170,11 @@ angular.module('whodeliversApp')
             $scope.photos = results;
           })  
         }
-
-        
       })
     }
+
+    $scope.viewDetails = function(){
+      $location.path('/details/tempur-la-bu');
+    }
+
   });

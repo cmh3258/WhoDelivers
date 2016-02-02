@@ -252,7 +252,7 @@
     width: 48%;
     padding: 7px;
     display: inline-block;
-    height: 21em;
+    height: 22em;
     /*height: 12em;*/
     overflow: hidden;
     /*position: relative;*/
@@ -344,6 +344,56 @@
     }
 
 
+/* Detail View */
+    .detail{
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .headerContainer{
+      height: 25em;
+      overflow: hidden;
+      margin-bottom: 1em;
+    }
+    .headerContainer img{
+      margin-top: -16em;
+      width: 100%;
+    }
+
+    /* Content */
+      .detail .content{
+        width: 80%;
+        margin:0 auto;
+        overflow: hidden;
+      }
+      .detail .content p{
+        color: #1e1e1e;
+        line-height: 30px;
+        font-size: 17px;
+      }
+      .detail .content .imgContainer{
+        margin: 0 auto;
+        height: 22em;
+        overflow: hidden;
+        width: 30em;
+      }
+      .detail .content .left{
+        width: 70%;
+        margin:0 auto;
+        float: left;
+        padding-right: 4em;
+      }
+      .detail .content .right{
+        width: 20%;
+        margin:0 auto;
+        float: left;
+      }
+
+
+
+/* Footer */
+    .footer{
+      margin-top:4em;
+    }
 
 
 
